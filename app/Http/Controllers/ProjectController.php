@@ -75,6 +75,20 @@ class ProjectController extends Controller
         $project->progress = $p;
         $project->update();
 
+        $parent = Project::with('children')->where('id', $project->parent_id)->first();
+        $siblings = Project::with('children')->where('parent_id', $project->parent_id)->get();
+
+        $sumProgress2 = 0;
+
+        foreach ($siblings as $sibling) {
+            $sumProgress2 += $sibling->progress;
+        }
+
+        if ($parent) {
+            $parent->progress = $sumProgress2 / count($siblings);
+            $parent->update();
+        }
+
         return redirect('/')->with('message', 'Child project updated succefully!');
     }
 
