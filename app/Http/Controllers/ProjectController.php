@@ -47,7 +47,6 @@ class ProjectController extends Controller
 
     public function createChild(Project $project)
     {
-
         return view('projects.create-child', [
             'project' => $project
         ]);
@@ -55,7 +54,6 @@ class ProjectController extends Controller
 
     public function storeChild(Request $request, project $project)
     {
-
         $formFields = $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -64,37 +62,41 @@ class ProjectController extends Controller
         ]);
 
         $formFields['parent_id'] = $project->id;
-        $project->update();
         $new_project = project::create($formFields);
-        $pro = 0;
+        $sumProgress = 0;
+
         $children = Project::with('children')->where('parent_id', $project->id)->get();
-        $parent = Project::with('children')->where('id', $project->parent_id)->get();
-        $siblings = Project::with('children')->where('parent_id', $project->parent_id)->get();
 
-        // foreach ($parent as $item1) {
-        //     foreach ($children as $item2) {
-        //         $pro +=  $item2->progress;
-        //         dd($pro);
-        //         $project->progress = $pro / count($children);
-        //         // $item1->progress = 
-        //         dd($item1->progress);
-        //     }
-        // }
-
-        $project->update();
-
-
-        if ($request->has('uploads')) {
-            foreach ($request->file('uploads') as $upload) {
-                $uploadName = $formFields['title'] . '-' . time() . $upload->extension();
-                $upload->move(public_path('projects_uploads'), $uploadName);
-                Upload::create([
-                    'project_id' => $new_project->id,
-                    'upload' => $uploadName
-                ]);
-            }
+        foreach ($children as $child) {
+            $sumProgress += $child->progress;
         }
+        $totalProgress = $sumProgress / count($children);
+        $p = round($totalProgress);
+        $project->progress = $p;
+        $project->update();
 
         return redirect('/')->with('message', 'Child project updated succefully!');
+    }
+
+    private function getChildren($project)
+    {
+        $ids = [];
+        $children = Project::with('children')->where('parent_id', $project->id)->get();
+        foreach ($children as $project) {
+            $ids[] = $project->id;
+            $ids = array_merge($ids, $this->getChildren($project));
+        }
+        return $ids;
+    }
+
+    private function getParents($project)
+    {
+        $ids = [];
+        $parents = Project::with('children')->where('id', $project->parent_id)->get();
+        foreach ($parents as $project) {
+            $ids[] = $project->id;
+            $ids = array_merge($ids, $this->getParents($project));
+        }
+        return $ids;
     }
 }

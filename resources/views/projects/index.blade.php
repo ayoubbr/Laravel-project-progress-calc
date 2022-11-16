@@ -5,7 +5,6 @@
         <span class="d-flex justify-between p-2.5">
             <p></p>
             <div class="d-flex gap-1.5">
-                <p class="w-24 text-center">Description</p>
                 <p class="w-24 text-center"> Type</p>
                 <p class="w-24 text-center  mr-5">Progress</p>
             </div>

@@ -60,27 +60,6 @@
 
                 </div>
                 <div class="icons d-flex align-center">
-                    {{-- @auth
-                        <img class="mr-2"
-                            src="{{ auth()->user()->logo ? asset('storage/' . auth()->user()->logo) : asset('/images/no-image.png') }}"
-                            alt="" />
-                        {{ auth()->user()->name }}
-                        <form action="/" method="post" class="ml-2">
-                            @csrf
-                            <button type="submit">Logout</button>
-                        </form>
-                    @else
-                        <a href="/register">
-                            <span class=" p-relative mr-5">
-                                Register
-                            </span>
-                        </a>
-                        <a href="/login">
-                            <span class=" p-relative">
-                                Login
-                            </span>
-                        </a>
-                    @endauth --}}
                 </div>
             </div>
             <!-- End Head -->

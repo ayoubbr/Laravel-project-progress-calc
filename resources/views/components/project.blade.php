@@ -12,37 +12,11 @@
                     <a href="/projects/{{$project->id}}/child/create"  class="text-gray-700 block px-4 py-2 text-sm">
                         <i class="ml-1 mr-3 fa-solid fa-plus"></i> Add Child project
                     </a>
-
-
-                    {{-- <a class="text-gray-700 block px-4 py-2 text-sm">
-                        <i class="fa-solid fa-eye ml-1 mr-3"></i>
-                        View Details
-                    </a>
-
-                    <a class="text-gray-700 block px-4 py-2 text-sm">
-                        <i class="fa-solid fa-plus ml-1 mr-3"></i>
-                        Add Comment
-                    </a>
-                    <a class="text-gray-700 block px-4 py-2 text-sm">
-                        <i class="ml-1 fa-solid fa-pencil mr-3"></i>
-                        Edit
-                    </a>
-                    <form class="text-gray-700 block px-4 py-2 text-sm" action="" method="POST">
-                        @csrf
-                        @method('delete')
-
-                        <button type="submit">
-                            <i class="ml-1 fa-solid fa-trash mr-3"></i>
-                            Delete
-                        </button>
-
-                    </form> --}}
                 </div>
             </div>
         </div>
         {{ $project->title }}
         <div class="d-flex ml-auto gap-1.5 text-sm">
-            {{-- <p class="w-24 text-center">{{ $project->description }}</p> --}}
             <p class="w-24 text-center">{{ $project->type }}</p>
             <p class="w-24 text-center">{{ $project->progress }}</p>
         </div>

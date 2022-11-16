@@ -88,41 +88,4 @@
             </form>
         </div>
     </div>
-    {{-- <script>
-        let user = document.querySelector(".user");
-        let selectSts = document.querySelector(".select-status");
-        let options = document.querySelectorAll(".useroption");
-        let typeSelect = document.querySelector(".type-select");
-        let comment = document.querySelector(".comment-text");
-
-        selectSts.parentElement.addEventListener('change', (event) => {
-            if (event.target.value == 'To Dispatch') {
-                user.classList.remove('hidden');
-                options.forEach(element => {
-                    element.setAttribute('value', element.innerHTML);
-                });
-            } else {
-                user.classList.add('hidden');
-                options.forEach(element => {
-                    element.setAttribute('value', '');
-                });
-            }
-            console.log(event.target.value);
-        });
-
-        if (selectSts.value !== 'To Dispatch') {
-            user.classList.add('hidden');
-            options.forEach(element => {
-                element.setAttribute('value', '');
-            });
-        }
-
-        typeSelect.addEventListener('change', (e) => {
-            if (e.target.value == 'Master') {
-                comment.innerHTML = 'TM'
-            } else {
-                comment.innerHTML = ''
-            }
-        });
-    </script> --}}
 @endsection

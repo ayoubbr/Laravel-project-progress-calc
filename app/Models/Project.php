@@ -42,7 +42,6 @@ class Project extends Model
         }
     }
 
-
     public function isChild(): bool
     {
         return $this->parent_id !== null;
