@@ -46,6 +46,7 @@ ol {
     margin-left: 30px;
     counter-reset: item;
     padding: 0 0px 0 30px !important;
+    max-width: 900px;
 }
 
 .wtree li {
@@ -86,10 +87,12 @@ ol {
 .wtree li span {
     display: block;
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 25px;
     color: black;
+    background-color: white;
     text-decoration: none;
     border-radius: 6px;
+    font-size: 1.1rem;
 }
 .wtree li span:before {
     content: counters(item, ".") " ";
@@ -1623,4 +1626,22 @@ label {
     border: none;
     padding: 0;
     cursor: pointer;
+}
+
+.progress-bar {
+    width: 120px;
+    height: 15px;
+    background: rgb(231, 228, 228);
+    border-radius: 6px;
+}
+
+.progress-percentage {
+    height: 15px;
+    border-radius: 4px;
+}
+
+.treespan {
+    display: flex !important;
+    gap: 10px !important;
+    flex-wrap: wrap;
 }

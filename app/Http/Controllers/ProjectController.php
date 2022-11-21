@@ -70,9 +70,10 @@ class ProjectController extends Controller
         foreach ($children as $child) {
             $sumProgress += $child->progress;
         }
+        
         $totalProgress = $sumProgress / count($children);
         $p = round($totalProgress);
-        $project->progress = $p;
+        $project->progress = round($p);
         $project->update();
 
         $parent = Project::with('children')->where('id', $project->parent_id)->first();
@@ -85,7 +86,7 @@ class ProjectController extends Controller
         }
 
         if ($parent) {
-            $parent->progress = $sumProgress2 / count($siblings);
+            $parent->progress = round($sumProgress2 / count($siblings)) ;
             $parent->update();
         }
 

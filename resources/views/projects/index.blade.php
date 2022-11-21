@@ -1,15 +1,15 @@
 @extends('welcome')
 
 @section('content')
-    <div class="p-5">
-        <span class="d-flex justify-between p-2.5">
+    <div class="p-5 d-flex align-center justify-center">
+        {{-- <span class="d-flex justify-between p-2.5">
             <p></p>
             <div class="d-flex gap-1.5">
-                <p class="w-24 text-center"> Type</p>
-                <p class="w-24 text-center  mr-5">Progress</p>
+                <p class="w-36 text-center  mr-5">Progress</p>
+               <!-- <p class="w-36 text-center"> Type</p> -->
             </div>
 
-        </span>
+        </span> --}}
         <x-projects :projects="$projects" />
     </div>
     <script>

@@ -22,7 +22,7 @@
     <div class="page d-flex">
         {{-- Start Sidebar  --}}
         <div class="sidebar bg-white p-10  p-relative">
-            <h3 class="p-relative txt-c mt-0">Tasks Manager</h3>
+            <h3 class="p-relative txt-c mt-0"></h3>
             <ul>
                 <li>
                     <a class="d-flex justify-start align-center fs-14 c-black rad-6 p-10 
@@ -38,7 +38,7 @@
                         {{ 'projects/create' == request()->path() ? 'active' : '' }}"
                         href="/projects/create">
                         <i class=" fa-solid fa-folder-plus"></i>
-                        <span class="sidebarspan">Add Task</span>
+                        <span class="sidebarspan">Add Project</span>
                     </a>
                 </li>
             </ul>
