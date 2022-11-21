@@ -31,7 +31,6 @@
         });
 
         let selects = document.querySelectorAll('.select');
-        console.log(selects);
 
         selects.forEach(element => {
             element.onchange = function(e) {

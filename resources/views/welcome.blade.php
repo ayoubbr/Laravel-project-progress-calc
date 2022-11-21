@@ -16,6 +16,27 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="//unpkg.com/alpinejs" defer></script>
+
+
+
+
+
+
+    <link href="{{ asset('css/jquery.nice-number.css') }}  " rel="stylesheet">
+    {{-- <script src="https://code.jquery.com/jquery-1.12.4.min.js" 
+            integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" 
+            crossorigin="anonymous">
+    </script> --}}
+
+
+
+
+
+
+
+
+
+
 </head>
 
 <body class="antialiased bg-gray-100">
@@ -67,5 +88,16 @@
         </div>
         {{-- End Content --}}
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="{{ asset('js/jquery.nice-number.js') }}"></script>
+
+    <script>
+        $(function() {
+            $('input[type="number"]').niceNumber();
+        });
+    </script>
+
 </body>
+
 </html>

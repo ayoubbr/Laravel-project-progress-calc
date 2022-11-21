@@ -17,6 +17,7 @@
         </div>
         {{ $project->title }}
         <div class="d-flex ml-auto gap-1.5 align-center">
+            {{$project->progress}} % 
             <div class="progress-bar">
                 <div @class([
                     'progress-bar',
@@ -28,7 +29,9 @@
                     'bg-green-500' => $project->progress == 100,
                 ]) style="width: {{ $project->progress }}%" ></div>
             </div>
-            <p class="w-36 text-center text-red">{{ $project->progress }} %</p>
+            <p class="w-36 text-center text-red">
+                <input type="number" class="number-input" name="" value="{{$project->progress}}" id="">
+                </p>
             {{-- <p class="w-36 text-center">{{ $project->type }}</p> --}}
         </div>
     </span>

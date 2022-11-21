@@ -1645,3 +1645,24 @@ label {
     gap: 10px !important;
     flex-wrap: wrap;
 }
+
+
+.number-input{
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    width: 50px;
+}    
+.number-input:hover,
+.number-input:focus
+{
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}    
+
+
+.nice-number button{
+    padding: 0 20px;
+    background: silver;
+    border-radius: 5px;
+}
