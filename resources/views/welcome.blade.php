@@ -70,14 +70,14 @@
             <!-- Start Head -->
             <div class="head bg-white p-15 between-flex">
                 <div class="search p-relative">
-                    <form action="">
+                    {{-- <form action="">
                         <input class="p-10" type="text" name="search" placeholder="Type A Keyword" />
 
 
                         <button class="search-icon" type="submit">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
-                    </form>
+                    </form> --}}
 
                 </div>
                 <div class="icons d-flex align-center">
